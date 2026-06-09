@@ -1,0 +1,4 @@
+cap_width:1280
+cap_height:720
+roomnumber:665
+camera:0

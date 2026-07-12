@@ -1,0 +1,9 @@
+﻿{
+  "camera_id": 0,
+  "cap_width": 1200,
+  "cap_height": 800,
+  "RECOGNITION_THRESHOLD": 0.7,
+  "MARGIN_THRESHOLD": 0.15,
+  "DETECT_THRESHOLD_HI": 0.9,
+  "DETECT_THRESHOLD_LO": 0.7
+}

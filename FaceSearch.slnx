@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="FaceSearch.vcxproj" Id="ee133540-35e0-4a56-a03d-86410f9dfd28" />
+</Solution>

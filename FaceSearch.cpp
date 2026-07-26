@@ -265,13 +265,15 @@ std::string captureFace(cv::VideoCapture& cap,
             state.hasFace = false;
             state.clicked = false;
         }
-        cv::putText(display, "Click to capture | ESC to close",
+        cv::putText(display, "Click to capture",
             cv::Point(10, 30), cv::FONT_HERSHEY_SIMPLEX,
             0.6, cv::Scalar(0, 255, 0), 2);
-        cv::imshow(winName, display);
+        // 检测窗口是否被关闭
+        double visible = cv::getWindowProperty(winName, cv::WND_PROP_VISIBLE);
+        if (visible < 1.0) exit(0);
 
+        cv::imshow(winName, display);
         int key = cv::waitKey(1) & 0xFF;
-        if (key == 27) break;
 
         if (state.clicked && state.hasFace) {
             state.clicked = false;
@@ -633,5 +635,6 @@ int main(int argc, char* argv[]) {
     // 身份确认完毕，关闭摄像头和窗口
     cv::destroyWindow(winName);
     delete detector;
+    cap.release();
     return 0;
 }
